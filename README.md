@@ -10,4 +10,4 @@ Simple Face Recognition algorithm using Python and OpenCV
 This project consist of 3 parts, which are:
 1. Creating datasets (face_datasets.py)
 2. Train the model (training.py)
-3. Face Recognition (face_recognition.py)
+3. Face Recognition (face_iden.py)
