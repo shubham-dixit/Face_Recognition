@@ -6,6 +6,11 @@ import cv2
 import os
 import numpy as np
 
+def assure_path_exists(path):
+    dir = os.path.dirname(path)
+    if not os.path.exists(dir):
+        os.makedirs(path)
+
 # Capturing the videos
 vid_cam = cv2.VideoCapture(0)
 
