@@ -55,11 +55,11 @@ while True:
         Id, confidence = recognizer.predict(gray[y:y+h,x:x+w])
 
         # Check the ID if exist 
-        if(Id == 1):
-            Id = "Shubham Dixit {0:.2f}%".format(round(100 - confidence, 2))
-        elif(Id == 2):
-            Id = "Chirag Dixit {0:.2f}%".format(round(100 - confidence, 2))
-
+        if Id in db:
+             name = str(db[Id])
+        else:
+            name = "Intruder"
+        Id = f"{name}{0:.2f}%".format(round(100 - confidence, 2))
         # Put text describe who is in the picture
         cv2.rectangle(im, (x-22,y-90), (x+w+22, y-22), (0,255,0), -1)
         cv2.putText(im, str(Id), (x,y-40), font, 1, (255,255,255), 3)
